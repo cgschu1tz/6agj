@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Jam
+namespace Assets.Scripts
 {
-    public class World : MonoBehaviour
+    public class WTree : MonoBehaviour
     {
         public Tilemap belowGround, aboveGround;
         public TileBase dirt, iron, water;
         public TileBase[] grass;
+        public List<LineRenderer> roots;
 
         void Awake()
         {
