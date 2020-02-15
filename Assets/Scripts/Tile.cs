@@ -4,5 +4,7 @@ using UnityEngine;
 
 public enum Tile
 {
-
+    Dirt,
+    Iron,
+    Water
 }

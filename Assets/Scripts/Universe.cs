@@ -9,5 +9,6 @@ public class Universe : MonoBehaviour
     void Awake()
     {
         Debug.Log("Hello, universe.");
+        GameObject.GetO
     }
 }
