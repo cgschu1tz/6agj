@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Tile
+namespace Jam
 {
-    Dirt,
-    Iron,
-    Water
+    public enum Tile
+    {
+        Dirt,
+        Iron,
+        Water
+    }
 }
