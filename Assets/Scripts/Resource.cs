@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public enum Tile
+    public class Resource : MonoBehaviour
     {
-        Dirt,
-        Iron,
-        Water
+        public int quantity;
     }
 }
