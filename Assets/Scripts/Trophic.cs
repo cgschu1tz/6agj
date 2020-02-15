@@ -10,8 +10,9 @@ namespace Assets.Scripts
 {
     public class Trophic : MonoBehaviour
     {
+        private float timer = 0;
+
         public List<Vector3> points;
-        public Tilemap belowGround;
 
         void Awake()
         {
@@ -30,6 +31,10 @@ namespace Assets.Scripts
                 points.Add(pt);
                 lr.positionCount = points.Count;
                 lr.SetPositions(points.ToArray());
+            }
+            else
+            {
+                timer = 0;
             }
         }
     }
