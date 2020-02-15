@@ -5,10 +5,29 @@ using UnityEngine;
 
 public class Roots : MonoBehaviour
 {
+    /// <summary>
+    /// private field where previous root is stored
+    /// </summary>
     private Roots Parent;
 
+    /// <summary>
+    /// list of roots that branch off of current root
+    /// </summary>
     private List<Roots> Children = new List<Roots>();
 
+    /*
+    /// <summary>
+    /// the resource the root is on
+    /// </summary>
+    private Resources resource;
+    */
+
+    /// <summary>
+    /// constructor, initiializes some fields
+    /// </summary>
+    /// <param name="parent">the previous root is</param>
+    /// <param name="x">x co-ordinate</param>
+    /// <param name="y">y co-ordinate</param>
     public Roots(Roots parent, int x, int y)
     {
         Parent = parent;
@@ -16,10 +35,42 @@ public class Roots : MonoBehaviour
         position_y = y;
     }
 
+    /// <summary>
+    /// field with the x co-ordinate
+    /// </summary>
     public int position_x { get; private set; }
 
+    /// <summary>
+    /// field with the y co-ordinate
+    /// </summary>
     public int position_y { get; private set; }
+    
+    /*
+    /// <summary>
+    /// attempts to grow a root at x,y
+    /// </summary>
+    /// <param name="x">x co-ordinate</param>
+    /// <param name="y">y co-ordinate</param>
+    /// <returns>bool if action was successful</returns>
+    public bool GrowRoot(int x, int y)
+    {
 
+        return true;
+    }
+
+    /// <summary>
+    /// checks for valid root placement
+    /// </summary>
+    /// <param name="x">x co-ordinate</param>
+    /// <param name="y">y co-ordinate</param>
+    /// <returns>if valid root placement</returns>
+    public bool CheckRoot(int x, int y)
+    {
+
+        return true;
+    }
+
+    
     public void GrowRoot(int x, int y)
     {
         int dif_x = Math.Abs(position_x - x);
@@ -43,8 +94,51 @@ public class Roots : MonoBehaviour
             }
         }
     }
-
     
+
+    public Score GetScore()
+    {
+        Score result = new Score();
+        switch (resource)
+        {
+            case (Resources.iron):
+                result.iron++;
+                break;
+            case (Resources.nitrogen):
+                result.nitrogen++;
+                break;
+            case (Resources.water):
+                result.water++;
+                break;
+        }
+        foreach (Roots root in Children)
+        {
+            result = GetScore(result);
+        }
+        return result;
+    }
+
+    public Score GetScore(Score score)
+    {
+        switch (resource)
+        {
+            case (Resources.iron):
+                score.iron++;
+                break;
+            case (Resources.nitrogen):
+                score.nitrogen++;
+                break;
+            case (Resources.water):
+                score.water++;
+                break;
+        }
+        foreach (Roots root in Children)
+        {
+            score = GetScore(score);
+        }
+        return score;
+    }
+    */
 
     // Start is called before the first frame update
     void Start()
