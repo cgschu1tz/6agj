@@ -10,31 +10,32 @@ namespace Assets.Scripts
 {
     public class Trophic : MonoBehaviour
     {
-        private float timer = 0;
-
-        public List<Vector3> points;
+        private float _timer = 0;
+        private List<Vector3> _points;
+        private int _mouseBtn = 0;
 
         void Awake()
         {
-            enabled = false;
-            points.Add(new Vector3(0, 0, 1));
+            _points.Add(new Vector3(0, 0, 0));
         }
 
         void Update()
         {
             if (Input.GetMouseButton(0))
             {
+                _timer += Time.deltaTime;
+
                 var lr = GetComponent<LineRenderer>();
                 var pt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 pt.z = 0;
 
-                points.Add(pt);
-                lr.positionCount = points.Count;
-                lr.SetPositions(points.ToArray());
+                _points.Add(pt);
+                lr.positionCount = _points.Count;
+                lr.SetPositions(_points.ToArray());
             }
             else
             {
-                timer = 0;
+                _timer = 0;
             }
         }
     }

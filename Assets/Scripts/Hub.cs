@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts
 {
-    public class WTree : MonoBehaviour
+    public class Hub : MonoBehaviour
     {
         public Tilemap belowGround, aboveGround;
         public TileBase dirt, iron, water;
