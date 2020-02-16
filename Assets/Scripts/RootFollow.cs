@@ -7,7 +7,7 @@ namespace Assets.Scripts
     public class RootFollow : MonoBehaviour
     {
         Vector3 rootPosition;
-        public float moveSpeed = 0.1f;
+        public float moveSpeed;
         Vector2 position = new Vector2(0f, 0f);
         Rigidbody2D rb;
         Transform Hub;
