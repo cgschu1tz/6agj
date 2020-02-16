@@ -10,7 +10,9 @@ namespace Assets.Scripts
         public Tilemap belowGround, aboveGround;
         public TileBase dirt, iron, water;
         public TileBase[] grass;
-        public List<LineRenderer> roots;
+        public List<GameObject> roots;
+
+        public GameObject followMe;
 
         void Awake()
         {
