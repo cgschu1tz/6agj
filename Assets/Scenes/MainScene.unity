@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199670239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.02, y: -6.53, z: 0}
+  m_LocalPosition: {x: -1.89, y: -4.79, z: 0}
   m_LocalScale: {x: 31.770176, y: 16.590176, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3468,7 +3468,6 @@ GameObject:
   - component: {fileID: 1424375637}
   - component: {fileID: 1424375638}
   - component: {fileID: 1424375639}
-  - component: {fileID: 1424375640}
   m_Layer: 0
   m_Name: Initial Root
   m_TagString: Untagged
@@ -3611,22 +3610,6 @@ MonoBehaviour:
   creationRate: 0.1
   proportionalGrowth: 0.1
   minDistanceToGrow: 0.3
---- !u!68 &1424375640
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424375636}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points: []
 --- !u!1 &1498121539
 GameObject:
   m_ObjectHideFlags: 0
