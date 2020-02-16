@@ -41,6 +41,33 @@ public class GenerateMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ((Camera.main.transform.position.y - 10) < tilemap.cellBounds.yMin)
+        {
+            Debug.Log(tilemap.cellBounds.yMin);
+            AddNextLine();
+        }
+    }
+
+    private void AddNextLine()
+    {
+        Tile tileToAdd;
+        int randomInt = 0;
+        int newMin = tilemap.cellBounds.yMin - 1;
+
+        for (int i = tilemap.cellBounds.xMin; i < tilemap.cellBounds.xMax; i++)
+        {
+            randomInt = Random.Range(0, 1000);
+
+            if (randomInt < 5)
+                tileToAdd = ironTile;
+            else if (randomInt < 10)
+                tileToAdd = nitrogenTile;
+            else if (randomInt < 60)
+                tileToAdd = waterTile;
+            else
+                tileToAdd = dirtTile;
+
+            tilemap.SetTile(new Vector3Int(i, newMin, 0), tileToAdd);
+        }
     }
 }
