@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts
 {
-    public class Tropic : MonoBehaviour
+    public class Root : MonoBehaviour
     {
         private float _rotationTimer, _creationTimer;
         private LineRenderer _lineRenderer;
