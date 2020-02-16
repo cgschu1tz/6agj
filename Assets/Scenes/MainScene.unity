@@ -5006,7 +5006,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88ee2aaf57fcdd64883005abd602893f, type: 2}
   - {fileID: 11400000, guid: 5ac88e11ac01b2c46a219dd3b040bed4, type: 2}
   - {fileID: 11400000, guid: d9d2d2c78fac9aa4b98162deb58ff7d3, type: 2}
-  roots: []
+  roots:
+  - {fileID: 1424375636}
   followMe: {fileID: 1424375636}
 --- !u!4 &1878820747
 Transform:
