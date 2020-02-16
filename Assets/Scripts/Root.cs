@@ -13,6 +13,8 @@ namespace Assets.Scripts
         private float _rotationTimer, _creationTimer;
         private LineRenderer _lineRenderer;
         private Vector3 _direction = Vector3.down;
+        private EdgeCollider2D _edgeCollider;
+        private List<Vector2> _edgeColliderPoints = new List<Vector2>();
 
         public float creationRate, creationDisplacement, rotationDisplacement;
         public Vector3 firstPoint;
@@ -25,6 +27,9 @@ namespace Assets.Scripts
             _lineRenderer = GetComponent<LineRenderer>();
             _lineRenderer.positionCount = 1;
             _lineRenderer.SetPositions(new[] { firstPoint });
+
+            _edgeCollider = GetComponent<EdgeCollider2D>();
+            _edgeCollider.points = new[] { new Vector2(firstPoint.x, firstPoint.y) };
         }
 
         void Update()
@@ -52,12 +57,15 @@ namespace Assets.Scripts
                     // Move in that direction.
                     var newPoint = creationDisplacement * _direction + latestPoint;
                     _lineRenderer.SetPosition(_lineRenderer.positionCount++, newPoint);
+                    _edgeColliderPoints.Add(new Vector2(newPoint.x, newPoint.y));
                 }
             }
             else
             {
                 _creationTimer = 0;
             }
+
+            _edgeCollider.points = _edgeColliderPoints.ToArray();
         }
     }
 }
