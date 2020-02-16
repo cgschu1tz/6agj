@@ -3468,6 +3468,7 @@ GameObject:
   - component: {fileID: 1424375637}
   - component: {fileID: 1424375638}
   - component: {fileID: 1424375639}
+  - component: {fileID: 1424375640}
   m_Layer: 0
   m_Name: Initial Root
   m_TagString: Untagged
@@ -3607,6 +3608,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae3094e22c6ac24c8d15d486332ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creationRate: 0.1
+  proportionalGrowth: 0.1
+  minDistanceToGrow: 0.3
+--- !u!68 &1424375640
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424375636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points: []
 --- !u!1 &1498121539
 GameObject:
   m_ObjectHideFlags: 0
