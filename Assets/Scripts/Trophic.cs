@@ -11,7 +11,7 @@ namespace Assets.Scripts
     public class Trophic : MonoBehaviour
     {
         private float _timer = 0;
-        private List<Vector3> _points;
+        private List<Vector3> _points = new List<Vector3>();
         private int _mouseBtn = 0;
 
         void Awake()
