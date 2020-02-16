@@ -8,45 +8,56 @@ using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts
 {
-    public class Trophic : MonoBehaviour
+    public class Tropic : MonoBehaviour
     {
-        private float _timer;
+        private float _rotationTimer, _creationTimer;
         private LineRenderer _lineRenderer;
+        private Vector3 _direction = Vector3.down;
 
-        public float creationRate;
-        public float proportionalGrowth;
-        public float minDistanceToGrow;
-        public Vector3 target;
+        public float creationRate, creationDisplacement, rotationDisplacement;
+        public Vector3 firstPoint;
 
         void Awake()
         {
-            _timer = 0;
+            _creationTimer = 0;
+            _rotationTimer = 0;
+
+            _lineRenderer = GetComponent<LineRenderer>();
+            _lineRenderer.positionCount = 1;
+            _lineRenderer.SetPositions(new[] { firstPoint });
         }
 
         void Update()
         {
             var latestPoint = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
 
-            if (Math.Abs(
-                Vector3.Magnitude(latestPoint - target)
-                ) >= minDistanceToGrow)
+            if (Input.GetKey(KeyCode.W))
             {
-                _timer += Time.deltaTime;
+                _creationTimer += Time.deltaTime;
 
-                if (_timer >= creationRate)
+                if (_creationTimer >= creationRate)
                 {
-                    _timer -= creationRate;
+                    _creationTimer -= creationRate;
 
-                    // Move towards the target.
+                    // Adjust heading.
+                    if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+                    {
+                        _direction = Quaternion.Euler(0, 0, -rotationDisplacement) * _direction;
+                    }
+                    else if (!Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
+                    {
+                        _direction = Quaternion.Euler(0, 0, rotationDisplacement) * _direction;
+                    }
+
+                    // Move in that direction.
+                    var newPoint = creationDisplacement * _direction + latestPoint;
+                    _lineRenderer.SetPosition(_lineRenderer.positionCount++, newPoint);
                 }
             }
             else
             {
-                _timer = 0;
+                _creationTimer = 0;
             }
-
-            _lineRenderer.positionCount++;
-            _lineRenderer.SetPosition(_lineRenderer.positionCount++, newPoint);
         }
     }
 }

@@ -3539,7 +3539,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.4931507
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3547,8 +3547,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.58730155
-        value: 0.122641444
+        time: 0.7915099
+        value: 0.08840072
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3608,8 +3608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creationRate: 0.1
-  proportionalGrowth: 0.1
-  minDistanceToGrow: 0.3
+  creationDisplacement: 0.5
+  rotationDisplacement: 20
+  firstPoint: {x: 0, y: 4.5, z: 0}
 --- !u!1 &1498121539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4266,7 +4267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878820745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.51, y: 8.82, z: -20.089844}
+  m_LocalPosition: {x: 0, y: 8.88, z: -20.089844}
   m_LocalScale: {x: 11.234452, y: 11.234452, z: 11.234452}
   m_Children:
   - {fileID: 1424375637}
