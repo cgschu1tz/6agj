@@ -3664,7 +3664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creationRate: 0.05
-  creationDisplacement: 0.2
+  creationDisplacement: 0.1
   rotationDisplacement: 20
   firstPoint: {x: 0, y: 4.5, z: 0}
 --- !u!1 &1498121539
@@ -5006,7 +5006,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88ee2aaf57fcdd64883005abd602893f, type: 2}
   - {fileID: 11400000, guid: 5ac88e11ac01b2c46a219dd3b040bed4, type: 2}
   - {fileID: 11400000, guid: d9d2d2c78fac9aa4b98162deb58ff7d3, type: 2}
-  roots: []
+  roots:
+  - {fileID: 1424375636}
   followMe: {fileID: 1424375636}
 --- !u!4 &1878820747
 Transform:
@@ -5062,12 +5063,12 @@ SpriteRenderer:
   m_SortingLayerID: -1947682301
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55c60e3de19a724468c05eb8b45d9646, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b83311bf988a1e24b84ac82f16eeace2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.5, y: 15.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
