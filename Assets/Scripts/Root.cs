@@ -67,5 +67,10 @@ namespace Assets.Scripts
 
             _edgeCollider.points = _edgeColliderPoints.ToArray();
         }
+
+        void OnTriggerEnter2D(Collision2D collision)
+        {
+            Debug.Log("Buy Full version Winrar" + collision.gameObject.name);
+        }
     }
 }
