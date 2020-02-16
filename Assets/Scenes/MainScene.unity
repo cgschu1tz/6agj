@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e503ed44b93027a44b3ea138ccbb06a7, type: 3}
   m_Name: 
@@ -322,6 +323,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66424a15bda8fa047b060421a1a7cc4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.05
+  heightLimit: 0
 --- !u!1 &798023271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,8 +3659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae3094e22c6ac24c8d15d486332ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creationRate: 0.1
-  creationDisplacement: 0.5
+  creationRate: 0.05
+  creationDisplacement: 0.2
   rotationDisplacement: 20
   firstPoint: {x: 0, y: 4.5, z: 0}
 --- !u!1 &1498121539
@@ -4988,7 +5003,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5ac88e11ac01b2c46a219dd3b040bed4, type: 2}
   - {fileID: 11400000, guid: d9d2d2c78fac9aa4b98162deb58ff7d3, type: 2}
   roots: []
-  followMe: {fileID: 0}
+  followMe: {fileID: 1424375636}
 --- !u!4 &1878820747
 Transform:
   m_ObjectHideFlags: 0
